@@ -22,7 +22,10 @@ import { JoiValidationSchema } from './config/joi.validation';
         fallthrough: false,
       },
     }),
-    MongooseModule.forRoot(process.env.MONGODB!, { dbName: 'pokemonsdb' }),
+    MongooseModule.forRoot(process.env.MONGODB!, {
+      dbName: 'pokemonsdb',
+      ssl: true,
+    }),
     PokemonModule,
     CommonModule,
     SeedModule,
